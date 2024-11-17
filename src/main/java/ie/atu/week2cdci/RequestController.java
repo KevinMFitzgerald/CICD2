@@ -9,7 +9,7 @@ public class RequestController {
     @GetMapping("/greet/{name}")
     public String greetByName(@PathVariable String name)
     {
-        return "Your name is " +name;
+        return "Hello" +name +"!";
     }
     @GetMapping ("/details")
     public String details (@RequestParam String name, @RequestParam int age)
@@ -33,7 +33,6 @@ public class RequestController {
                 if(num2==0)
                 {
                     return "You cannot divide by zero";
-
                 }
                 else{
                     ans = (float)num1/num2;
@@ -43,8 +42,8 @@ public class RequestController {
                 ans = num1*num2;
                 break;
             default:
-                return "Please check the operator. Cap Sensitive";
+                return "Please check the operator.Cap Sensitive";
         }
-        return "The correct answer is: " + ans;
+        return "answer is: " + ans;
     }
 }
