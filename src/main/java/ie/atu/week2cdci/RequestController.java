@@ -17,9 +17,9 @@ public class RequestController {
         return "Name: " + name +" Age: " + age + " years old ";
     }
     @GetMapping("/calculate")
-    public String calculate(@RequestParam Float num1,@RequestParam Float num2,@RequestParam String operation)
+    public String calculate(@RequestParam int num1,@RequestParam int num2,@RequestParam String operation)
     {
-        float ans;
+        int ans;
         switch (operation)
         {
             case"add":
@@ -35,7 +35,7 @@ public class RequestController {
                     return "{\"error\": \"You cannot divide by zero\"}";
                 }
                 else{
-                    ans = (float)num1/num2;
+                    ans = num1/num2;
                 }
                 break;
             case "multiply":
